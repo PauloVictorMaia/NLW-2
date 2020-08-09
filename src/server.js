@@ -52,23 +52,15 @@ const weekdays=[
     "Sábado",
 ]
 
-//funcionalidades
-function getSubject(subjectNumber){
-    const Position = + subjectNumber - 1
-    return subjects[position]
-}
-
+// Request || Response
 function pageGiveClasses(req,res){
     const data = req.query
-     
-    
-    //se tiver dados(data)
-    const isNotEmpty= Object.keys(data).leigth > 0
-    
-    if(isNotEmpt){
 
-        data.subject = getSubject(data.subject)
-       
+    //se tiver dados(data)
+    const isNotEmpty = Object.keys(data).length > 0
+    
+    if(isNotEmpty){
+
         //adicionar dados a lista de proffys
         proffys.push(data)
         return res.redirect("/study")
@@ -107,7 +99,7 @@ server.use(express.static("public"))
 })
 
 .get("/give-classes", (req, res) => {
-    return res.render("give-classes.html",{weekdays})
+    return pageGiveClasses(req, res);
 })
 //start do servidor
 .listen(5500)
