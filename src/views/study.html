@@ -36,12 +36,12 @@
                             <option value="{{loop.index}}" disabled="" hidden="">Selecione uma opção</option>
                             
                             {%for subject in subjects%}
-                            <option value="{{loop.index}}" {{"selected" if filters.subject == loop.index}}>
-                                {{subjects}}
+                            <option value="{{loop.index0}}" {{"selected" if filters.subject == loop.index0}}>
+                                {{subject}}
                             </option>
                             {%endfor%}
                             
-                            <option value="2"{{"selected" if filters.subject == 2}}>Biologia</option>
+                            <!--<option value="2"{{"selected" if filters.subject == 2}}>Biologia</option>
                             <option value="3"{{"selected" if filters.subject == 3}}>Ciências</option>
                             <option value="4"{{"selected" if filters.subject == 4}}>Educação física</option>
                             <option value="5"{{"selected" if filters.subject == 5}}>Física</option>
@@ -49,7 +49,7 @@
                             <option value="7"{{"selected" if filters.subject == 7}}>História</option>
                             <option value="8"{{"selected" if filters.subject == 8}}>Matemática</option>
                             <option value="9"{{"selected" if filters.subject == 9}}>Português</option>
-                            <option value="10"{{"selected" if filters.subject == 10}}>Química</option>
+                            <option value="10"{{"selected" if filters.subject == 10}}>Química</option>-->
                             
                         </select>
                     </div>
@@ -84,6 +84,10 @@
         
         <main>
     
+            {%if proffys == ""%}
+                <p class="no-results">Nenhum professor foi encontrado com a sua pesquisa</p>
+            {% else %}
+
             {%for proffy in proffys %}
            
             <article class="teacher-item">
