@@ -124,6 +124,12 @@
     background-color: var(--color-secondary-dark);
 }
 
+#page-study main .no-results {
+    max-width: 300px;
+    margin: 12rem auto;
+    text-align: center;
+}
+
 
 /*Desktop*/
 
